@@ -61,18 +61,18 @@ namespace EduBot.Controllers
         {
             var values = new Dictionary<string, string>
             {
-                { "client_id", "255ef9af-d650-4a4d-822d-bbf606211dfa" },
-                //{ "scope", "offline_access%20eduroster.readwrite%20eduassignments.readwrite" },
-                { "scope", "mail.read" },
+                { "client_id", "59818122-3f7b-4017-abeb-5bdf5af2c95b" },
+                { "scope", "offline_access%20eduroster.readwrite%20eduassignments.readwrite" },
+                //{ "scope", "mail.read" },
                 { "code", code },
                 { "redirect_uri", "http://localhost:8080/api/auth/" },
-                { "client_secret", "kercqXHZJ0037_+ixLLO9=*" },
+                { "client_secret", "RaNDv+5iaOL4OYp5IkH9TX39Wx68jR9KBbzPuHOQenQ=" },
                 { "grant_type", "authorization_code" }
             };
 
             var content = new FormUrlEncodedContent(values);
 
-            var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v2.0/token", content);
+            var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v1.0/token", content);
 
             var responseData = await response.Content.ReadAsAsync<TokenResponse>();
 

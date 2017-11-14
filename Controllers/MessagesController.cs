@@ -50,7 +50,7 @@ namespace EduBot
                             //Value = $"{System.Configuration.ConfigurationManager.AppSettings["AppWebSite"]}/Home/Login?userid={HttpUtility.UrlEncode(activity.From.Id)}",
                             //Value = "https://login.microsoftonline.com/common/adminconsent?client_id=255ef9af-d650-4a4d-822d-bbf606211dfa&state=auth&redirect_uri=http://localhost:8080/api/auth/",
                             //Value = $"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=255ef9af-d650-4a4d-822d-bbf606211dfa&response_type=code&redirect_uri=http://localhost:8080/api/auth/&response_mode=query&scope=offline_access%20eduroster.readwrite%20eduassignments.readwrite&state={state}",
-                            Value = $"https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=255ef9af-d650-4a4d-822d-bbf606211dfa&response_type=code&redirect_uri=http://localhost:8080/api/auth/&response_mode=query&scope=mail.read&state={HttpUtility.UrlEncode(JsonConvert.SerializeObject(state))}",
+                            Value = $"https://login.microsoftonline.com/common/oauth2/v1.0/authorize?client_id=59818122-3f7b-4017-abeb-5bdf5af2c95b&response_type=code&redirect_uri=http://localhost:8080/api/auth/&response_mode=query&scope=offline_access%20eduroster.readwrite%20eduassignments.readwrite&state={HttpUtility.UrlEncode(JsonConvert.SerializeObject(state))}",
                             Type = "signin",
                             Title = "Authentication Required"
                         };
