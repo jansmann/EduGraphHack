@@ -62,7 +62,7 @@ namespace EduBot.Controllers
             var values = new Dictionary<string, string>
             {
                 { "client_id", "59818122-3f7b-4017-abeb-5bdf5af2c95b" },
-                { "scope", "offline_access%20eduroster.readwrite%20eduassignments.readwrite" },
+                { "resource", "https://graph.microsoft.com" },
                 //{ "scope", "mail.read" },
                 { "code", code },
                 { "redirect_uri", "http://localhost:8080/api/auth/" },
@@ -72,7 +72,7 @@ namespace EduBot.Controllers
 
             var content = new FormUrlEncodedContent(values);
 
-            var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v1.0/token", content);
+            var response = await client.PostAsync("https://login.microsoftonline.com/microsofteduo365.onmicrosoft.com/oauth2/token", content);
 
             var responseData = await response.Content.ReadAsAsync<TokenResponse>();
 
