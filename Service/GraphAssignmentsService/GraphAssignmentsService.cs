@@ -12,13 +12,13 @@ namespace EduBot.Service.GraphAssignmentsService
         private static readonly HttpClient client = new HttpClient();
 
 
-        public async void AddToAssignments(State state, string code)
+        public async void AddToAssignments(Assignment assignment)
         {
             
 
-            var content = new FormUrlEncodedContent(values);
+            //var content = new FormUrlEncodedContent(values);
 
-            var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v2.0/token", content);
+            //var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v2.0/token", content);
         }
     }
     public class Resource
@@ -31,7 +31,7 @@ namespace EduBot.Service.GraphAssignmentsService
         public string createdDateTime { get; set; }
 
         [JsonProperty("displayName_token")]
-        public int displayName { get; set; }
+        public string displayName { get; set; }
 
         [JsonProperty("lastModifiedBy_token")]
         public string lastModifiedBy { get; set; }
