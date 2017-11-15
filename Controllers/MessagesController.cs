@@ -75,6 +75,10 @@ namespace EduBot
                         Activity reply = activity.CreateReply($"token is {token} & refresh is {refresh}");
                         await connector.Conversations.ReplyToActivityAsync(reply);
                     }
+                    else
+                    {
+                        await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                    }
                 }
                 //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
